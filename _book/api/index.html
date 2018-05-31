@@ -1,0 +1,2240 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>接口设计 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="./" />
+    
+    
+    <link rel="prev" href="../process/" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../overview/">
+            
+                <a href="../overview/">
+            
+                    
+                    直投概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../process/">
+            
+                <a href="../process/">
+            
+                    
+                    流程说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    接口设计
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="./">
+            
+                <a href="./#api1">
+            
+                    
+                    调用方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="./">
+            
+                <a href="./#api2">
+            
+                    
+                    名词解释
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="./">
+            
+                <a href="./#api3">
+            
+                    
+                    数据通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="./">
+            
+                <a href="./#api4">
+            
+                    
+                    接口描述
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.4.1" data-path="./">
+            
+                <a href="./#api41">
+            
+                    
+                    创建新用户
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.2" data-path="./">
+            
+                <a href="./#api42">
+            
+                    
+                    老用户认证
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.3" data-path="./">
+            
+                <a href="./#api43">
+            
+                    
+                    老用户绑定回调
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.4" data-path="./">
+            
+                <a href="./#api44">
+            
+                    
+                    认证登录令牌
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.5" data-path="./">
+            
+                <a href="./#api45">
+            
+                    
+                    认证登录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.6" data-path="./">
+            
+                <a href="./#api46">
+            
+                    
+                    绑定用户查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.7" data-path="./">
+            
+                <a href="./#api47">
+            
+                    
+                    标的查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.8" data-path="./">
+            
+                <a href="./#api48">
+            
+                    
+                    投资记录查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.9" data-path="./">
+            
+                <a href="./#api49">
+            
+                    
+                    回款记录查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4.10" data-path="./">
+            
+                <a href="./#api410">
+            
+                    
+                    平台唯一用户标识查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="./">
+            
+                <a href="./#api5">
+            
+                    
+                    全局响应码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="./">
+            
+                <a href="./#api6">
+            
+                    
+                    注意事项
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../version/">
+            
+                <a href="../version/">
+            
+                    
+                    版本说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >接口设计</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;">&#x63A5;&#x53E3;&#x8BBE;&#x8BA1;</h1>
+<ol>
+<li><span id="api1">&#x8C03;&#x7528;&#x65B9;&#x5F0F;</span><ul>
+<li>&#x91C7;&#x7528;UTF-8&#x7F16;&#x7801;&#x7684;HTTP POST&#x65B9;&#x5F0F;</li>
+</ul>
+</li>
+<li><span id="api2">&#x540D;&#x8BCD;&#x89E3;&#x91CA;</span><ul>
+<li>appid : &#x5929;&#x773C;&#x5206;&#x914D;&#x7ED9;&#x5E73;&#x53F0;&#x7684;&#x5E73;&#x53F0;&#x4EE3;&#x53F7;</li>
+<li>public_key : &#x5929;&#x773C;&#x5206;&#x914D;&#x7ED9;&#x5E73;&#x53F0;&#x7684;&#x7528;&#x4E8E;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x7684;&#x5BC6;&#x94A5;</li>
+<li>timestamp : unix&#x65F6;&#x95F4;&#x6233;&#xFF0C;&#x7CBE;&#x786E;&#x5230;&#x79D2;</li>
+<li>sign : &#x6570;&#x636E;&#x7B7E;&#x540D;&#xFF0C;&#x7528;&#x4E8E;&#x6821;&#x9A8C;&#x6570;&#x636E;&#x5B8C;&#x6574;&#x6027;</li>
+<li>nonce : &#x968F;&#x673A;&#x6570;</li>
+</ul>
+</li>
+<li><p><span id="api3">&#x6570;&#x636E;&#x901A;&#x4FE1;</span></p>
+<ul>
+<li>&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x5747;&#x4E3A;json&#x683C;&#x5F0F;</li>
+<li><p><code>&#x6CE8;&#xFF1A;&#x7740;&#x9646;&#x9875;4.2&#xFF08;&#x8001;&#x7528;&#x6237;&#x8BA4;&#x8BC1;&#xFF09;&#x548C;4.5&#xFF08;&#x8BA4;&#x8BC1;&#x767B;&#x5F55;&#xFF09;&#x91C7;&#x7528;&#x5E38;&#x7528;&#x7684;post&#x8868;&#x5355;&#x63D0;&#x4EA4;&#x3002;</code></p>
+<p>3.1.    &#x6570;&#x636E;&#x683C;&#x5F0F;</p>
+<pre><code>&#x8BF7;&#x6C42;&#x548C;&#x54CD;&#x5E94;&#x91C7;&#x7528;&#x7EDF;&#x4E00;&#x7684;JSON&#x683C;&#x5F0F; 
+{
+  &quot;appid&quot;: &quot;string&#xFF0C;&#x5929;&#x4E3A;&#x5E73;&#x53F0;&#x5206;&#x914D;&#x7684;&#x552F;&#x4E00;&#x7F16;&#x53F7;&quot;,
+  &quot;version&quot;: &quot;string&#xFF0C;&#x56FA;&#x5B9A;&#x503C; 2.0&quot;,
+  &quot;encrypt_data&quot;: &quot;string&#xFF0C;&#x5FC5;&#x987B;&#xFF0C;&#x5BC6;&#x6587;&#xFF0C;&#x660E;&#x6587;&#x4E3A;JSON&#x683C;&#x5F0F;&#xFF0C;&#x53C2;&#x8003;&#x5404;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&quot;,
+  &quot;nonce&quot;: &quot;string&#xFF0C;&#x5FC5;&#x987B;&#xFF0C;&#x968F;&#x673A;&#x5B57;&#x7B26;&#x4E32;&quot;,
+  &quot;timestamp&quot;: &quot;int&#xFF0C;&#x5FC5;&#x987B;&#xFF0C;&#x8BF7;&#x6C42;&#x65F6;&#x95F4;&#x6233;&#xFF08;&#x79D2;&#xFF09;&#x6709;&#x6548;&#x5468;&#x671F;5&#x5206;&#x949F;&quot;,
+   &quot;sign&quot;: &quot;string&#xFF0C;&#x5FC5;&#x987B;&#xFF0C;&#x6570;&#x636E;&#x7B7E;&#x540D;&quot;,
+}
+</code></pre><p>3.2.    &#x5F02;&#x5E38;&#x54CD;&#x5E94;</p>
+<pre><code>&#x660E;&#x6587;&#xFF0C;&#x65E0;&#x987B;&#x52A0;&#x5BC6;
+{
+  &quot;retcode&quot;: &quot;int, &#x9519;&#x8BEF;&#x4EE3;&#x7801;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x8003;&#x9519;&#x8BEF;&#x5B9A;&#x4E49;&quot;,
+  &quot;retmsg&quot;: &quot; string&#xFF0C; &#x9519;&#x8BEF;&#x63CF;&#x8FF0;&quot;,
+}
+retcode&#x548C;retmsg&#x53C2;&#x8003;&#x5404;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x53CA;&#x5168;&#x5C40;&#x5B9A;&#x4E49;&#x3002;
+</code></pre><p>3.3.    &#x539F;&#x59CB;&#x6570;&#x636E;</p>
+<pre><code>encrypt_data&#x539F;&#x59CB;&#x6570;&#x636E;&#x683C;&#x5F0F;
+{
+  &quot;api&quot;: &quot;string, &#x975E;&#x7A7A;, &#x7528;&#x4E8E;&#x533A;&#x5206;&#x63A5;&#x53E3;&#x4E1A;&#x52A1;&quot;,
+  &quot;body&quot;: &quot;json, &#x8BF7;&#x6C42;&#x6570;&#x636E;&#xFF0C;&#x5177;&#x4F53;&#x53C2;&#x8003;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7AE0;&#x8282;&quot;&#xFF0C;
+}
+</code></pre><p>3.4.    &#x6570;&#x636E;&#x7B7E;&#x540D;</p>
+<pre><code>&#x7B7E;&#x540D;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;&#x4E3A;&#x5C06;json&#x6240;&#x6709;key=val&#x6309;&#x7167;key&#x5347;&#x5E8F;&#x6392;&#x5217;&#x62FC;&#x63A5;&#x540E;&#x8FDB;&#x884C;SHA1&#x8BA1;&#x7B97;
+</code></pre><p>3.5.    &#x6570;&#x636E;&#x52A0;&#x5BC6;</p>
+<pre><code>&#x4F7F;&#x7528;AES&#x65B9;&#x5F0F;&#x5BF9;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x52A0;&#x5BC6;&#xFF0C;&#x6570;&#x636E;&#x52A0;&#x5BC6;&#x524D;&#x4F1A;&#x5BF9;&#x6570;&#x636E;&#x505A;&#x4E00;&#x4E9B;&#x7B80;&#x5355;&#x7684;&#x5904;&#x7406;&#x3002;
+&#x4F7F;&#x7528;Data&#x8868;&#x793A;&#x771F;&#x5B9E;&#x7684;&#x660E;&#x6587;&#x6570;&#x636E;
+
+// &#x52A0;&#x5BC6;&#x7B97;&#x6CD5;
+encrypt_key = md5(public_key + timestamp)
+encrypt_data = AES(raw_data, encrypt_key);
+</code></pre><p>3.6.    &#x670D;&#x52A1;&#x5668;&#x767D;&#x540D;&#x5355;</p>
+<pre><code>&#x9664;&#x7740;&#x9646;&#x9875;&#x5916;&#x7684;&#x6240;&#x6709;&#x63A5;&#x53E3;&#x5747;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x670D;&#x52A1;&#x5668;IP&#x767D;&#x540D;&#x5355;&#xFF0C;&#x5E73;&#x53F0;&#x5BF9;&#x4E8E;&#x5929;&#x773C;&#x7684;IP&#x767D;&#x540D;&#x5355;&#x6821;&#x9A8C;&#x9700;&#x8981;&#x652F;&#x6301;&#x901A;&#x914D;&#x7B26;&#x914D;&#x7F6E;&#x7684;IP&#x6BB5;&#x3002;
+</code></pre></li>
+</ul>
+</li>
+</ol>
+<p>4.<span id="api4">&#x63A5;&#x53E3;&#x63CF;&#x8FF0;</span><br>
+4.1.    <span id="api41">&#x521B;&#x5EFA;&#x65B0;&#x7528;&#x6237;</span><br>
+api=user_create</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x624B;&#x673A;&#x53F7;</td>
+</tr>
+<tr>
+<td>realname</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x771F;&#x5B9E;&#x59D3;&#x540D;</td>
+</tr>
+<tr>
+<td>idno</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;</td>
+</tr>
+<tr>
+<td>cardno</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x94F6;&#x884C;&#x5361;&#x53F7;</td>
+</tr>
+<tr>
+<td>resv</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x4FDD;&#x7559;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;user_create&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;mobile&quot;: &quot;18411013287&quot;,
+        &quot;realname&quot;: &quot;&#x738B;&#x5C0F;&#x4E8C;&quot;,
+        &quot;idno&quot;: &quot;110105200001011932&quot;,
+        &quot;cardno&quot;: &quot;6212461120000374499&quot;,
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x65B0;&#x7528;&#x6237;/&#x7ED1;&#x5B9A;&#x7528;&#x6237;&#x54CD;&#x5E94;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x540C;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+</tr>
+<tr>
+<td>reg_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7684;&#x6CE8;&#x518C;&#x65F6;&#x95F4;&#x7CBE;&#x786E;&#x5230;&#x79D2;</td>
+</tr>
+<tr>
+<td>bind_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5E73;&#x53F0;&#x8D26;&#x53F7;&#x7ED1;&#x5B9A;&#x5929;&#x773C;&#x8D26;&#x53F7;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>bind_type</td>
+<td>enmu</td>
+<td>&#x662F;</td>
+<td>1&#x5929;&#x773C;&#x5E26;&#x6765;&#x7684;&#x65B0;&#x7528;&#x6237;2&#x5E73;&#x53F0;&#x8001;&#x7528;&#x6237;</td>
+</tr>
+<tr>
+<td>ukey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5BC6;&#x94A5;&#xFF0C;&#x7528;&#x4E8E;&#x8BA4;&#x8BC1;&#x767B;&#x9646;&#x6821;&#x9A8C;</td>
+</tr>
+<tr>
+<td>resv</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x4FDD;&#x7559;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;user_create&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;puid&quot;: &quot;584216&quot;,
+        &quot;username&quot;: &quot;&#x5F20;&#x4E09;&quot;,
+        &quot;reg_time&quot;: &quot;2018-01-01 12:34:59&quot;,
+        &quot;bind_time&quot;: &quot;2018-01-01 12:34:59&quot;,
+        &quot;bind_type&quot;: &quot;1&quot;,
+        &quot;ukey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXsHbVVjBzZRMwI3&quot;,
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x8001;&#x7528;&#x6237;&#x54CD;&#x5E94;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>retcode</td>
+<td>retmsg</td>
+</tr>
+<tr>
+<td>4101</td>
+<td>&#x624B;&#x673A;&#x53F7;&#x5DF2;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>4102</td>
+<td>&#x5B9E;&#x540D;&#x4FE1;&#x606F;&#x5DF2;&#x5B58;&#x5728;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;retcode&quot;: &quot;4101&quot;,
+    &quot;retmsg&quot;: &quot;&#x624B;&#x673A;&#x53F7;&#x5DF2;&#x5B58;&#x5728;&quot;,
+}
+</code></pre><p>&#x6CE8;&#x610F;&#xFF1A;<br>
+1&#x3001;&#x7528;&#x6237;&#x91CD;&#x590D;&#x521B;&#x5EFA;&#x65F6;&#x6B63;&#x5E38;&#x8FD4;&#x56DE;&#x7ED1;&#x5B9A;&#x4FE1;&#x606F;&#x5373;&#x53EF;&#xFF1B;<br>
+2&#x3001;&#x5E73;&#x53F0;&#x521B;&#x5EFA;&#x7684;&#x7528;&#x6237;&#x5982;&#x6709;&#x7528;&#x6237;&#x540D;&#x6216;&#x6635;&#x79F0;&#xFF0C;&#x5EFA;&#x8BAE;&#x7EDF;&#x4E00;&#x4F7F;&#x7528;p2peye_&#x624B;&#x673A;&#x53F7;&#x7684;&#x5F62;&#x5F0F;&#xFF1B;<br>
+3&#x3001;ukey&#x8981;&#x4FDD;&#x8BC1;&#x5168;&#x5C40;&#x7684;&#x552F;&#x4E00;&#x6027;&#xFF0C;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x4F7F;&#x7528;&#x4E0D;&#x540C;&#x7684;&#x7528;&#x6237;&#x5BC6;&#x94A5;&#x3002;</p>
+<p>4.2.    <span id="api42">&#x8001;&#x7528;&#x6237;&#x8BA4;&#x8BC1;</span><br>
+&#x5C06;&#x7528;&#x6237;&#x7684;&#x5929;&#x773C;&#x8D26;&#x6237;&#x540C;&#x5E73;&#x53F0;&#x5DF2;&#x6709;&#x8D26;&#x6237;&#x5EFA;&#x7ACB;&#x7ED1;&#x5B9A;&#x5173;&#x7CFB;&#xFF0C;&#x5E73;&#x53F0;&#x63A5;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#x5E94;&#x5F15;&#x5BFC;&#x7528;&#x6237;&#x8DF3;&#x8F6C;&#x5230;&#x4E13;&#x5C5E;&#x7684;&#x8BA4;&#x8BC1;&#x9875;&#x9762;&#xFF0C;&#x7528;&#x6237;&#x767B;&#x9646;&#x6210;&#x529F;&#x540E;&#xFF0C;&#x5E73;&#x53F0;&#x56DE;&#x8C03;4.3&#x7684;&#x8001;&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x5199;&#x5165;&#x63A5;&#x53E3;&#xFF0C;&#x5B8C;&#x6210;&#x7ED1;&#x5B9A;&#x3002;<br>
+api=user_bind</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5929;&#x773C;&#x624B;&#x673A;&#x53F7;</td>
+</tr>
+<tr>
+<td>realname</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x771F;&#x5B9E;&#x59D3;&#x540D;</td>
+</tr>
+<tr>
+<td>idno</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x8EAB;&#x4EFD;&#x8BC1;&#x53F7;</td>
+</tr>
+<tr>
+<td>cardno</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x94F6;&#x884C;&#x5361;&#x53F7;</td>
+</tr>
+<tr>
+<td>resv</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x4FDD;&#x7559;&#x5B57;&#x6BB5;</td>
+</tr>
+<tr>
+<td>sid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x4F1A;&#x8BDD;id</td>
+</tr>
+<tr>
+<td>loan_id</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x5E73;&#x53F0;&#x6807;id &#x82E5;&#x4E3A;&#x7A7A;&#x8DF3;&#x8F6C;&#x5230;&#x5E73;&#x53F0;&#x9996;&#x9875;</td>
+</tr>
+<tr>
+<td>device</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x7EC8;&#x7AEF;&#x8BBE;&#x5907;&#x7C7B;&#x578B;:1 pc 2 mobile</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;user_bind&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;mobile&quot;: &quot;18411013287&quot;,
+        &quot;realname&quot;: &quot;&#x738B;&#x5C0F;&#x4E8C;&quot;,
+        &quot;idno&quot;: &quot;110105200001011932&quot;,
+        &quot;cardno&quot;: &quot;6212461120000374499&quot;,
+        &quot;sid&quot;: &quot;&#x5929;&#x773C;&#x5355;&#x6B21;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x4F1A;&#x8BDD;&#x6807;&#x8BC6;&quot;,
+         loan_id&quot;:&quot;123&quot;,
+        &quot;device&quot;: &quot;1&quot;
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th>&#x7740;&#x9646;&#x9875;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>&#x5E73;&#x53F0;&#x63A5;&#x5230;&#x8BF7;&#x6C42;&#x540E;&#x5E94;&#x5F15;&#x5BFC;&#x7528;&#x6237;&#x8DF3;&#x8F6C;&#x5230;&#x4E13;&#x5C5E;&#x7684;&#x8BA4;&#x8BC1;&#x9875;&#x9762;</td>
+</tr>
+</tbody>
+</table>
+<p>4.3.    <span id="api43">&#x8001;&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x56DE;&#x8C03;</span><br>
+api=user_bind</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>4.2&#x4E2D;&#x63D0;&#x4EA4;&#x8FC7;&#x53BB;&#x7684;uid</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7684;&#x624B;&#x673A;&#x53F7;</td>
+</tr>
+<tr>
+<td>reg_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7684;&#x6CE8;&#x518C;&#x65F6;&#x95F4;&#x7CBE;&#x786E;&#x5230;&#x79D2;</td>
+</tr>
+<tr>
+<td>bind_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5E73;&#x53F0;&#x8D26;&#x53F7;&#x7ED1;&#x5B9A;&#x5929;&#x773C;&#x8D26;&#x53F7;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>ukey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x5BC6;&#x94A5;</td>
+</tr>
+<tr>
+<td>sid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x4F1A;&#x8BDD;id</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;user_bind&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;puid&quot;: &quot;584216&quot;,
+        &quot;username&quot;: &quot;p2peye_18411013287&quot;,
+        &quot;mobile&quot;: &quot;18411013287&quot;,
+        &quot;reg_time&quot;: &quot;2018-01-01 12:34:59&quot;,
+        &quot;bind_time&quot;: &quot;2018-01-01 12:34:59&quot;,
+        &quot;ukey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXsHbVVjBzZRMwI3&quot;,
+        &quot;sid&quot;: &quot;&#x5929;&#x773C;&#x5355;&#x6B21;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x4F1A;&#x8BDD;&#x6807;&#x8BC6;&#xFF0C;&#x5E73;&#x53F0;&#x539F;&#x6837;&#x8FD4;&#x56DE;&#x5373;&#x53EF;&quot;,
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4111</td>
+<td>&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>4112</td>
+<td>&#x624B;&#x673A;&#x53F7;&#x4E0D;&#x4E00;&#x81F4;</td>
+</tr>
+</tbody>
+</table>
+<p>4.4.    <span id="api44">&#x8BA4;&#x8BC1;&#x767B;&#x5F55;&#x4EE4;&#x724C;</span><br>
+&#x83B7;&#x53D6;&#x7528;&#x4E8E;4.5 &#x8BA4;&#x8BC1;&#x767B;&#x5F55;&#x4F7F;&#x7528;&#x7684;&#x5E73;&#x53F0;&#x4E00;&#x6B21;&#x6027;&#x767B;&#x9646;token,&#x4F7F;&#x7528;&#x4E00;&#x6B21;&#x5931;&#x6548;<br>
+api=token_get</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>ukey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x5BC6;&#x94A5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;token_get&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;puid&quot;: &quot;584216&quot;,
+        &quot;ukey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXsHbVVjBzZRMwI3&quot;,
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x5206;&#x914D;&#x7684;&#x7528;&#x4E8E;&#x8BA4;&#x8BC1;&#x767B;&#x9646;&#x7684;&#x4E00;&#x6B21;&#x6027;&#x4EE4;&#x724C;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;token_get&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;puid&quot;: &quot;584216&quot;,
+        &quot;token&quot;: &quot;go4s&quot;,
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4121</td>
+<td>&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>4122</td>
+<td>&#x7528;&#x6237;&#x5BC6;&#x94A5;&#x9519;&#x8BEF;</td>
+</tr>
+</tbody>
+</table>
+<p>4.5.    <span id="api45">&#x8BA4;&#x8BC1;&#x767B;&#x5F55;</span><br>
+&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x5E73;&#x53F0;&#x8D26;&#x6237;&#x548C;&#x5929;&#x773C;&#x8D26;&#x6237;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x8BE5;&#x63A5;&#x53E3;&#x767B;&#x5F55;&#x5230;&#x5E73;&#x53F0;&#x3002;<br>
+api=user_login</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>ukey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x5206;&#x914D;&#x7684;&#x7528;&#x6237;&#x5BC6;&#x94A5;</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>4.4&#x4E2D;&#x83B7;&#x53D6;&#x7684;&#x4E00;&#x6B21;&#x6027;token</td>
+</tr>
+<tr>
+<td>target</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>1 &#x9996;&#x9875;2 &#x6807;&#x7684;&#x6295;&#x8D44;&#x9875;3 &#x4E2A;&#x4EBA;&#x4E2D;&#x5FC3;4 &#x5145;&#x503C;5 &#x63D0;&#x73B0;6 &#x6211;&#x7684;&#x6295;&#x8D44;&#x8BB0;&#x5F55;7 &#x6211;&#x7684;&#x7EA2;&#x5305;</td>
+</tr>
+<tr>
+<td>loan_id</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>target&#x662F;2&#x65F6;&#x5FC5;&#x4F20;</td>
+</tr>
+<tr>
+<td>device</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x7EC8;&#x7AEF;&#x8BBE;&#x5907;&#x7C7B;&#x578B; 1 pc 2 mobile</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;user_login&quot;,
+    &quot;body&quot;: {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;puid&quot;: &quot;584216&quot;,
+        &quot;ukey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXsHbVVjBzZRMwI3&quot;,
+        &quot;token&quot;: &quot;go4s&quot;,
+        &quot;target&quot;: &quot;2&quot;,
+        &quot;loan_id&quot;: &quot;8321&quot;,
+        &quot;device&quot;: 1
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>&#x7740;&#x9646;&#x9875;</td>
+<td>&#x4F9D;&#x636E;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E2D;&#x6307;&#x5B9A;&#x53C2;&#x6570;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x5BF9;&#x5E94;&#x7684;&#x9875;&#x9762;</td>
+</tr>
+</tbody>
+</table>
+<p>4.6.    <span id="api46">&#x7ED1;&#x5B9A;&#x7528;&#x6237;&#x67E5;&#x8BE2;</span><br>
+&#x67E5;&#x8BE2;&#x7ED1;&#x5B9A;&#x65F6;&#x95F4;&#x4ECB;&#x4E8E;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6BB5;&#x5185;&#xFF0C;&#x53CA;&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5929;&#x773C;&#x7528;&#x6237;uid&#x6761;&#x4EF6;&#x7684;&#x7ED1;&#x5B9A;&#x7528;&#x6237;&#x7684;&#x4FE1;&#x606F;&#x3002;<br>
+api=user_query</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x5F00;&#x59CB;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7ED3;&#x675F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x9879;</td>
+</tr>
+<tr>
+<td>custom.key</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x5929;&#x773C;UID</td>
+</tr>
+<tr>
+<td>custom.value</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x9ED8;&#x8BA4;&#x7A7A; &#x5355;&#x4E2A;&#x5E73;&#x53F0;uid&#x6216;&#x591A;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x5272;&#x7684;&#x5E73;&#x53F0;uid</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;user_query&quot;,
+    &quot;body&quot;: {
+                 &quot;datetime&quot; : {
+                         &quot;start_time&quot;: &quot;2018-01-01 12:00:00&quot;,
+                         &quot;end_time&quot;: &quot;2018-01-02 18:00:00&quot;,
+                 },
+                 &quot;custom&quot; : {
+                         &quot;key&quot; : &quot;uid&quot;
+                         &quot;value : &quot;612485&quot;,
+                 },
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>reg_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7684;&#x6CE8;&#x518C;&#x65F6;&#x95F4;&#x7CBE;&#x786E;&#x5230;&#x79D2;</td>
+</tr>
+<tr>
+<td>bind_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5E73;&#x53F0;&#x8D26;&#x53F7;&#x7ED1;&#x5B9A;&#x5929;&#x773C;&#x8D26;&#x53F7;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>bind_type</td>
+<td>enmu</td>
+<td>&#x662F;</td>
+<td>1&#x5929;&#x773C;&#x5E26;&#x6765;&#x7684;&#x65B0;&#x7528;&#x6237;2&#x5E73;&#x53F0;&#x8001;&#x7528;&#x6237;</td>
+</tr>
+<tr>
+<td>ukey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5BC6;&#x94A5;</td>
+</tr>
+<tr>
+<td>available_balance</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x53EF;&#x7528;&#x4F59;&#x989D;</td>
+</tr>
+<tr>
+<td>frozen_balance</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x51BB;&#x7ED3;&#x4F59;&#x989D;</td>
+</tr>
+<tr>
+<td>periodic_funds</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x5B9A;&#x671F;&#x5F85;&#x6536;&#x672C;&#x91D1;</td>
+</tr>
+<tr>
+<td>periodic_interest</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x5B9A;&#x671F;&#x5F85;&#x6536;&#x5229;&#x606F;</td>
+</tr>
+<tr>
+<td>current_funds</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6D3B;&#x671F;&#x8D44;&#x4EA7;</td>
+</tr>
+<tr>
+<td>other_funds</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x8D44;&#x4EA7;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot; user_query&quot;,
+    &quot;body&quot;: [
+        {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+            &quot;puid &quot;: &quot;584216&quot;,
+            &quot;reg_time&quot;: &quot;2018-01-01 12:00:00&quot;,
+            &quot;bin_time&quot;: &quot;2018-01-01 12:00:00&quot;,
+            &quot;bind_type&quot;: &quot;1&quot;,
+            &quot;ukey&quot;: &quot;2MHawBhUmIFZQw_BDQAP1IzBXsHbVVjBzZRMwI3&quot;,
+            &quot;available_balance&quot;: &quot;308.26&quot;,
+            &quot;frozen_balance&quot;: &quot;5000.00&quot;,
+            &quot;periodic_funds&quot;: &quot;10000.00&quot;,
+            &quot;periodic_interest&quot;: &quot;347.05&quot;,
+            &quot;current_funds&quot;: &quot;1007.6&quot;,
+            &quot;other_funds&quot;: &quot;0.00&quot;,
+                  },
+                  {
+        &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+&quot;puid &quot;: &quot;584217&quot;,
+            &quot;puname&quot;: &quot;p2peye_13920109208&quot;,
+            &quot;reg_time&quot;: &quot;2018-01-03 15:20:54&quot;,
+            &quot;bin_time&quot;: &quot;2018-01-03 15:20:59&quot;,
+            &quot;bind_type&quot;: &quot;1&quot;,
+            &quot;ukey&quot;: &quot;3IwMRZzBjVVbHsXBzI1PAQDB_wQZFImUhBwaHM2&quot;,
+            &quot;available_balance&quot;: &quot;628.03&quot;,
+            &quot;frozen_balance&quot;: &quot;5000.00&quot;,
+            &quot;periodic_funds&quot;: &quot;10000.00&quot;,
+            &quot;periodic_interest&quot;: &quot;507.43&quot;,
+            &quot;current_funds&quot;: &quot;6700.01&quot;,
+            &quot;other_funds&quot;: &quot;0.00&quot;,
+                  },
+                  &#x2026;
+        ]
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4131</td>
+<td>&#x6307;&#x5B9A;&#x7528;&#x6237;&#x4E0D;&#x5B58;&#x5728;</td>
+</tr>
+</tbody>
+</table>
+<p>4.7.    <span id="api47">&#x6807;&#x7684;&#x67E5;&#x8BE2;</span><br>
+&#x8BFB;&#x53D6;&#x5E73;&#x53F0;&#x7684;&#x5408;&#x4F5C;&#x6807;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x5929;&#x773C;&#x7406;&#x8D22;&#x76F4;&#x6295;&#x76F8;&#x5173;&#x9875;&#x9762;&#x5C55;&#x793A;&#x548C;&#x66F4;&#x65B0;&#x6807;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4FBF;&#x4E8E;&#x7528;&#x6237;&#x4E00;&#x7AD9;&#x5F0F;&#x6295;&#x8D44;&#x3002;<br>
+&#x8981;&#x6C42;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x6807;&#x7684;&#x3010;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#x3011;&#x4ECB;&#x4E8E;&#x8981;&#x6C42;&#x7684;&#x65F6;&#x95F4;&#x6BB5;&#x8303;&#x56F4;&#x5185;&#xFF0C;&#x53CA;&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6807;&#x7684;&#x7684; loan_id&#x5BF9;&#x5E94;&#x7684;&#x6570;&#x636E;&#x3002;<br>
+api=loan_query</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x5F00;&#x59CB;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7ED3;&#x675F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x9879;</td>
+</tr>
+<tr>
+<td>custom.key</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>loan_id</td>
+</tr>
+<tr>
+<td>custom.value</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x5272;&#x7684;&#x5E73;&#x53F0;&#x6807;&#x7684;id</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;loan_query&quot;,
+    &quot;body&quot;: {
+                 &quot;datetime&quot; : {
+                         &quot;start_time&quot;: &quot;2018-01-01 12:00:00&quot;,
+                         &quot;end_time&quot;: &quot;2018-01-02 18:00:00&quot;,
+
+                 },
+                 &quot;custom&quot; : {
+                         &quot;key&quot; : &quot;loan_id&quot;
+                         &quot;value : &quot;6124,6125&quot;,
+                 }
+
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>loan_id</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x6807;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>loan_name</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x501F;&#x6B3E;&#x603B;&#x989D;</td>
+</tr>
+<tr>
+<td>remain_amount</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x5269;&#x4F59;&#x53EF;&#x6295;&#x91D1;&#x989D;</td>
+</tr>
+<tr>
+<td>start_amount</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x8D77;&#x6295;&#x91D1;&#x989D;</td>
+</tr>
+<tr>
+<td>up_amount</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x9650;&#x6295;&#x91D1;&#x989D;</td>
+</tr>
+<tr>
+<td>period</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x501F;&#x6B3E;&#x671F;&#x9650;</td>
+</tr>
+<tr>
+<td>period_type</td>
+<td>int</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x671F;&#x9650;&#x5355;&#x4F4D;1&#x6708; 2&#x5929;</td>
+</tr>
+<tr>
+<td>reward</td>
+<td>float</td>
+<td>&#x5426;</td>
+<td>&#x6295;&#x6807;&#x5956;&#x52B1;</td>
+</tr>
+<tr>
+<td>reward_type</td>
+<td>int</td>
+<td>&#x5426;</td>
+<td>&#x5956;&#x52B1;&#x65B9;&#x5F0F; 1&#x767E;&#x5206;&#x6BD4;/% 2&#x91D1;&#x989D;/&#x5143;</td>
+</tr>
+<tr>
+<td>cost</td>
+<td>float</td>
+<td>&#x5426;</td>
+<td>&#x5229;&#x606F;&#x7BA1;&#x7406;&#x8D39;</td>
+</tr>
+<tr>
+<td>least_period</td>
+<td>int</td>
+<td>&#x5426;</td>
+<td>&#x6807;&#x7684;&#x6700;&#x4F4E;&#x6301;&#x6709;&#x671F;&#x9650;(&#x5929;)&#x8981;&#x6C42;</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x501F;&#x6B3E;&#x5229;&#x7387;&#x767E;&#x5206;&#x6BD4;&#xFF0C;&#x542B;&#x5956;&#x52B1;&#xFF08;%&#x6570;&#x989D;&#x90E8;&#x5206;&#xFF09;</td>
+</tr>
+<tr>
+<td>process</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6295;&#x6807;&#x8FDB;&#x5EA6; &#x9ED8;&#x8BA4;0.00&#xFF08;0.00~100.00&#xFF09;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x72B6;&#x6001;1&#x5728;&#x6295;2&#x8FD8;&#x6B3E;&#x4E2D;3&#x6B63;&#x5E38;&#x8FD8;&#x6B3E;4&#x63D0;&#x524D;&#x8FD8;&#x6B3E;5&#x4E0B;&#x67B6;</td>
+</tr>
+<tr>
+<td>publish_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x53D1;&#x5E03;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>active_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x8D77;&#x6295;&#x65F6;&#x95F4;&#xFF0C;&#x9884;&#x552E;&#x8D77;&#x5934;&#x65F6;&#x95F4;&#x5E94;&#x665A;&#x4E8E;&#x53D1;&#x5E03;&#x65F6;&#x95F4;&#xFF0C;&#x666E;&#x901A;&#x6807;&#x540C;&#x53D1;&#x5E03;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>&#x5426;</td>
+<td>&#x8D77;&#x606F;&#x65F6;&#x95F4;&#xFF0C;&#x72B6;&#x6001;&#x66F4;&#x65B0;&#x4E3A;&#x8FD8;&#x6B3E;&#x4E2D;&#x65F6;&#x5FC5;&#x987B;</td>
+</tr>
+<tr>
+<td>type</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x9879;&#x76EE;&#x7C7B;&#x578B;0&#x666E;&#x901A;&#x6807;1&#x7206;&#x6B3E;&#x6807;2&#x65B0;&#x624B;&#x6807;3&#x9884;&#x552E;&#x6807;99&#x5176;&#x4ED6;</td>
+</tr>
+<tr>
+<td>property</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x501F;&#x6B3E;&#x6027;&#x8D28;1&#x8F66;&#x8D37;2&#x623F;&#x8D37;3&#x4E2A;&#x4EBA;&#x4FE1;&#x7528;&#x8D37;4&#x4E2D;&#x5C0F;&#x4F01;&#x4E1A;&#x8D37;5&#x503A;&#x6743;&#x6D41;&#x8F6C;6&#x7968;&#x636E;&#x62B5;&#x62BC;7&#x4F18;&#x9009;&#x7406;&#x8D22;99&#x5176;&#x4ED6;</td>
+</tr>
+<tr>
+<td>security</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x4FDD;&#x969C;&#x65B9;&#x5F0F;1&#x5E73;&#x53F0;&#x81EA;&#x6709;&#x8D44;&#x91D1;2&#x5E73;&#x53F0;&#x98CE;&#x9669;&#x51C6;&#x5907;&#x91D1;3&#x94F6;&#x884C;4&#x4FDD;&#x9669;&#x516C;&#x53F8;5&#x5C0F;&#x8D37;&#x516C;&#x53F8;6&#x878D;&#x8D44;&#x6027;&#x62C5;&#x4FDD;&#x516C;&#x53F8;7&#x975E;&#x878D;&#x8D44;&#x6027;&#x62C5;&#x4FDD;&#x516C;&#x53F8;8&#x4FDD;&#x7406;&#x516C;&#x53F8;99&#x5176;&#x4ED6;</td>
+</tr>
+<tr>
+<td>reply_day</td>
+<td>int</td>
+<td>&#x5426;</td>
+<td>&#x56FA;&#x5B9A;&#x4ED8;&#x606F;&#x65E5;&#xFF08;&#x5F53;&#x6708;1~31&#x65E5;&#xFF09;pay_way&#x7B49;&#x4E8E;8&#x4E3A;&#x5FC5;&#x586B;</td>
+</tr>
+<tr>
+<td>pay_way</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x8FD8;&#x6B3E;&#x65B9;&#x5F0F;1&#x7B49;&#x989D;&#x672C;&#x606F;2&#x5148;&#x606F;&#x540E;&#x672C;3&#x5230;&#x671F;&#x8FD8;&#x672C;&#x606F;4&#x7B49;&#x989D;&#x672C;&#x91D1;5&#x968F;&#x5B58;&#x968F;&#x53D6;6&#x5229;&#x606F;&#x590D;&#x6295;7&#x7B49;&#x672C;&#x7B49;&#x606F;8&#x56FA;&#x5B9A;&#x4ED8;&#x606F;&#x65E5;9&#x6309;&#x6708;&#x4ED8;&#x606F;&#x6309;&#x5B63;&#x7B49;&#x989D;&#x672C;&#x91D1;10&#x6309;&#x65E5;&#x4ED8;&#x606F;&#x5230;&#x671F;&#x8FD8;&#x672C;11&#x6309;&#x5B63;&#x4ED8;&#x606F;&#x5230;&#x671F;&#x8FD8;&#x672C;12&#x6EE1;&#x6807;&#x4ED8;&#x606F;&#x5230;&#x671F;&#x8FD8;&#x672C;101&#x81EA;&#x5B9A;&#x4E49;&#x8FD8;&#x6B3E;</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;PC&#x9875;&#x9762;URL</td>
+</tr>
+<tr>
+<td>murl</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x6807;&#x7684;&#x79FB;&#x52A8;&#x7EC8;&#x7AEF;&#x9875;&#x9762;URL&#xFF0C;&#x9ED8;&#x8BA4;&#x540C;PC</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x6807;&#x7684;&#x63CF;&#x8FF0;</td>
+</tr>
+<tr>
+<td>device</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>&#x5C55;&#x793A;&#x7EC8;&#x7AEF;&#x9ED8;&#x8BA4;1 1pc&amp;mobile2pc3mobile4none</td>
+</tr>
+<tr>
+<td>resv</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x4FDD;&#x7559;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot; loan_query&quot;,
+    &quot;body&quot;: [
+        {
+&quot;loan_id&quot;: &quot;323123&quot;,
+            &quot;loan_name&quot;: &quot;&#x5E73;&#x53F0;&#x501F;&#x6B3E;001&quot;,
+            &quot;total_amount&quot;: &quot;1000000.00&quot;,
+            &quot;remain_amount&quot;: &quot;530000.00&quot;,
+            &quot;start_amount&quot;: &quot;100.00&quot;,
+            &quot;up_amount&quot;: &quot;10000.00&quot;,
+            &quot;period&quot;: &quot;3&quot;,
+            &quot;period_type&quot;: &quot;1&quot;,
+            &quot;reward&quot;: &quot;10&quot;,
+            &quot;reward_type&quot;: &quot;1&quot;,
+            &quot;cost&quot;: &quot;10&quot;,
+            &quot;least_period&quot;: &quot;15&quot;,
+            &quot;rate&quot;: &quot;8.50&quot;,
+            &quot;process&quot;: &quot;50.00&quot;,
+            &quot;status&quot;: &quot;1&quot;,
+            &quot;publish_time&quot;: &quot;2018-01-08 12:25:00&quot;,
+            &quot;active_time&quot;: &quot;2018-01-08 12:25:00&quot;,
+            &quot;start_time&quot;: &quot;&quot;,
+            &quot;type&quot;: &quot;1&quot;,
+            &quot;property&quot;: &quot;1&quot;,
+            &quot;security&quot;: &quot;3&quot;,
+            &quot;reply_day&quot;: &quot;31&quot;,
+            &quot;pay_way&quot;: &quot;1&quot;,
+            &quot;url&quot;: &quot;http://www.platform.com/loan/323123&quot;,
+            &quot;murl&quot;: &quot;http://m.platform.com/loan/323123&quot;,
+            &quot;desc&quot;: &quot;&#x6807;&#x7684;&#x63CF;&#x8FF0;&quot;,
+            &quot;device &quot;: &quot;1&quot;,
+                    },
+                    {
+&quot;loan_id&quot;: &quot;323124&quot;,
+            &quot;loan_name&quot;: &quot;&#x5E73;&#x53F0;&#x501F;&#x6B3E;002&quot;,
+            &quot;total_amount&quot;: &quot;3000000.00&quot;,
+            &quot;remain_amount&quot;: &quot;1670000.00&quot;,
+            &quot;start_amount&quot;: &quot;1000.00&quot;,
+            &quot;up_amount&quot;: &quot;10000.00&quot;,
+            &quot;period&quot;: &quot;12&quot;,
+            &quot;period_type&quot;: &quot;2&quot;,
+            &quot;reward&quot;: &quot;10&quot;,
+            &quot;reward_type&quot;: &quot;1&quot;,
+            &quot;cost&quot;: &quot;10&quot;,
+            &quot;least_period&quot;: &quot;1&quot;,
+            &quot;rate&quot;: &quot;13.00&quot;,
+            &quot;process&quot;: &quot;0.00&quot;,
+            &quot;status&quot;: &quot;2&quot;,
+            &quot;publish_time&quot;: &quot;2018-01-09 13:20:00&quot;,
+            &quot;active_time&quot;: &quot;2018-01-09 13:20:00&quot;,
+            &quot;start_time&quot;: &quot;2018-01-11 10:00:00&quot;,
+            &quot;type&quot;: &quot;2&quot;,
+            &quot;property&quot;: &quot;1&quot;,
+            &quot;security&quot;: &quot;3&quot;,
+            &quot;reply_day&quot;: &quot;31&quot;,
+            &quot;pay_way&quot;: &quot;1&quot;,
+            &quot;url&quot;: &quot;http://www.platform.com/loan/323124&quot;,
+            &quot;murl&quot;: &quot;http://m.platform.com/loan/323124&quot;,
+            &quot;desc&quot;: &quot;&#x6807;&#x7684;&#x63CF;&#x8FF0;&quot;,
+            &quot;device &quot;: &quot;1&quot;,
+                    },
+                    &#x2026;
+    ]
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>4.8.    <span id="api48">&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x67E5;&#x8BE2;</span><br>
+&#x8BFB;&#x53D6;&#x5E73;&#x53F0;&#x7684;&#x5408;&#x4F5C;&#x6807;&#x7684;&#x7528;&#x6237;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x6570;&#x636E;&#xFF0C;&#x7528;&#x4E8E;&#x5728;&#x5929;&#x773C;&#x7406;&#x8D22;&#x76F4;&#x6295;&#x76F8;&#x5173;&#x9875;&#x9762;&#x5C55;&#x793A;&#x548C;&#x66F4;&#x65B0;&#x6807;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4FBF;&#x4E8E;&#x7528;&#x6237;&#x4E00;&#x7AD9;&#x5F0F;&#x6295;&#x8D44;&#x3002;<br>
+&#x8981;&#x6C42;&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x7684;&#x3010;&#x6295;&#x8D44;&#x65F6;&#x95F4;&#x3011;&#x4ECB;&#x4E8E;&#x8981;&#x6C42;&#x7684;&#x65F6;&#x95F4;&#x6BB5;&#x8303;&#x56F4;&#xFF0C;&#x6216;&#x5728;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x590D;&#x5408;&#x4EE5;&#x4E0B;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#xFF08;3&#x9009;1&#xFF09;&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF1A;<br>
+&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x7684; order_id&#x5BF9;&#x5E94;&#x7684;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x6570;&#x636E;<br>
+&#x6216;&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6807;&#x7684;&#x7684; loan_id&#x5BF9;&#x5E94;&#x7684;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x6570;&#x636E;<br>
+&#x6216;&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5929;&#x773C;&#x7528;&#x6237; uid&#x5BF9;&#x5E94;&#x7684;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x6570;&#x636E;<br><br>api=order_query</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x5F00;&#x59CB;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7ED3;&#x675F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x9879;</td>
+</tr>
+<tr>
+<td>custom.key</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>order_id&#x5E73;&#x53F0;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x552F;&#x4E00;&#x6807;&#x8BC6;loan_id&#x5E73;&#x53F0;&#x6807;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;uid&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>custom.val</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x9ED8;&#x8BA4;&#x7A7A; &#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x5272;&#x7684;&#x6307;&#x5B9A;&#x7684;KEY&#x5BF9;&#x5E94;&#x7684;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;order_query&quot;,
+    &quot;body&quot;: {
+                 &quot;datetime&quot; : {
+                         &quot;start_time&quot;: &quot;2018-01-01 12:00:00&quot;,
+                         &quot;end_time&quot;: &quot;2018-01-02 18:00:00&quot;,
+
+                 },
+                 &quot;custom&quot; : {
+                         &quot;key&quot; : &quot;order_id&quot;
+                         &quot;value : &quot;323123_001,323123_002&quot;,
+                 }
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>loan_id</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x6807;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x72B6;&#x6001;1&#x5F85;&#x8D77;&#x606F;2&#x8FD8;&#x6B3E;&#x4E2D;3&#x5DF2;&#x8FD8;&#x6E05;4&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6295;&#x8D44;&#x603B;&#x989D;</td>
+</tr>
+<tr>
+<td>off_amount</td>
+<td>float</td>
+<td>&#x5426;</td>
+<td>&#x62B5;&#x6263;&#x91D1;&#x989D; &#x9ED8;&#x8BA4;0.00</td>
+</tr>
+<tr>
+<td>trade_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x6295;&#x8D44;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>&#x5426;</td>
+<td>&#x8D77;&#x606F;&#x65F6;&#x95F4;&#xFF0C;status=2&#x65F6;&#x5FC5;&#x987B;</td>
+</tr>
+<tr>
+<td>rate</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x6295;&#x8D44;&#x5229;&#x7387;&#xFF0C;&#x767E;&#x5206;&#x6BD4;&#x6570;&#x989D;&#x90E8;&#x5206;</td>
+</tr>
+<tr>
+<td>reward</td>
+<td>float</td>
+<td>&#x5426;</td>
+<td>&#x989D;&#x5916;&#x6295;&#x8D44;&#x5956;&#x52B1;&#xFF08;&#x975E;&#x62B5;&#x6263;&#x7C7B;&#xFF09;&#x9ED8;&#x8BA4;0.00</td>
+</tr>
+<tr>
+<td>device</td>
+<td>enum</td>
+<td>&#x662F;</td>
+<td>&#x6295;&#x8D44;&#x7EC8;&#x7AEF; 1PC web 2mobile web 3Android app 4iOS app 99&#x5176;&#x4ED6;</td>
+</tr>
+<tr>
+<td>resv</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x4FDD;&#x7559;&#x5B57;&#x6BB5;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot; order_query&quot;,
+    &quot;body&quot;: [
+            {
+&quot;order_id&quot;: &quot;323123_001&quot;,
+&quot;loan_id&quot;: &quot;323123&quot;,
+&quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+&quot;puid&quot;: &quot;584216&quot;,
+&quot;status&quot;: &quot;2&quot;,
+            &quot;total_amount&quot;: &quot;10000.00&quot;,
+            &quot;off_amount&quot;: &quot;80.00&quot;,
+            &quot;trade_time&quot;: &quot;2018-01-08 12:25:00&quot;,
+            &quot;start_time&quot;: &quot;2018-01-10 10:00:00&quot;,
+            &quot;rate&quot;: &quot;13.00&quot;,
+            &quot;reward&quot;: &quot;36.85&quot;,
+            &quot;device&quot;: &quot;1&quot;,
+                       },
+                       {
+&quot;order_id&quot;: &quot;323123_002&quot;,
+&quot;loan_id&quot;: &quot;323123&quot;,
+&quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+&quot;puid&quot;: &quot;684216&quot;,
+&quot;status&quot;: &quot;2&quot;,
+            &quot;total_amount&quot;: &quot;5000.00&quot;,
+            &quot;off_amount&quot;: &quot;40.00&quot;,
+            &quot;trade_time&quot;: &quot;2018-01-08 18:34:26&quot;,
+            &quot;start_time&quot;: &quot;2018-01-10 10:00:00&quot;,
+            &quot;rate&quot;: &quot;13.00&quot;,
+            &quot;reward&quot;: &quot;21.73&quot;,
+            &quot;device&quot;: &quot;2&quot;,
+                       },
+                       &#x2026;
+    ]
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>4.9.    <span id="api49">&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x67E5;&#x8BE2;</span><br>
+&#x8BFB;&#x53D6;&#x7528;&#x6237;&#x6295;&#x8D44;&#x5DF2;&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x4EE5;&#x53CA;&#x56DE;&#x6B3E;&#x8BA1;&#x5212;&#x7684;&#x6570;&#x636E;<br>
+&#x53EF;&#x4EE5;&#x67E5;&#x8BE2;&#x7528;&#x6237;&#x6307;&#x5B9A;&#x65F6;&#x95F4;&#x6BB5;&#x8303;&#x56F4;&#xFF0C;&#x6216;&#x5728;&#x65F6;&#x95F4;&#x8303;&#x56F4;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x590D;&#x5408;&#x4EE5;&#x4E0B;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x6761;&#x4EF6;&#xFF08;3&#x9009;1&#xFF09;&#x7684;&#x5BF9;&#x5E94;&#x7684;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#xFF1A;<br>
+&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x7684; order_id&#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x6570;&#x636E;<br>
+&#x6216;&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x6807;&#x7684;&#x7684; loan_id&#x5BF9;&#x5E94;&#x7684;&#x6240;&#x6709;&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x6570;&#x636E;<br>
+&#x6216;&#x53EF;&#x9009;&#x7684;&#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x5929;&#x773C;&#x7528;&#x6237;uid&#x5BF9;&#x5E94;&#x7684;&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x6570;&#x636E;</p>
+<p>1.&#x6DFB;&#x52A0;&#x56DE;&#x6B3E;&#x662F;&#x6211;&#x4EEC;&#x53D6;&#x5F97;&#x975E;&#x5DF2;&#x6295;&#x6807;&#x72B6;&#x6001;&#x7684;&#x8BA2;&#x5355;&#x7684;&#x6700;&#x5C0F;&#x4EA4;&#x6613;&#x65F6;&#x95F4;&#x548C;&#x6700;&#x5927;&#x4EA4;&#x6613;&#x65F6;&#x95F4;&#x4F5C;&#x4E3A;&#x67E5;&#x8BE2;&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x7684;&#x67E5;&#x8BE2;&#x533A;&#x95F4;<br>
+2.&#x66F4;&#x65B0;&#x56DE;&#x6B3E;&#x662F;&#x6211;&#x4EEC;&#x67E5;&#x8BE2;&#x5DF2;&#x6DFB;&#x52A0;&#x56DE;&#x6B3E;&#x7684;&#x672A;&#x7ED3;&#x6E05;&#x7684;&#x8BB0;&#x5F55;&#x67E5;&#x51FA;3&#x5929;&#x524D;&#x7684;&#x9884;&#x8BA1;&#x56DE;&#x6B3E;&#x7684;&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x4F5C;&#x4E3A;&#x66F4;&#x65B0;<br>
+api=repayment_query</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>start_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x5F00;&#x59CB;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>end_time</td>
+<td>datetime</td>
+<td>&#x662F;</td>
+<td>&#x7ED3;&#x675F;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>custom</td>
+<td>json</td>
+<td>&#x5426;</td>
+<td>&#x81EA;&#x5B9A;&#x4E49;&#x67E5;&#x8BE2;&#x9879;</td>
+</tr>
+<tr>
+<td>custom.key</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>order_id&#x5E73;&#x53F0;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x552F;&#x4E00;&#x6807;&#x8BC6;loan_id&#x5E73;&#x53F0;&#x6807;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;uid&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>custom.val</td>
+<td>string</td>
+<td>&#x5426;</td>
+<td>&#x9ED8;&#x8BA4;&#x7A7A; &#x6307;&#x5B9A;&#x5355;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x9017;&#x53F7;&#x5206;&#x5272;&#x7684;&#x6307;&#x5B9A;&#x7684;KEY&#x5BF9;&#x5E94;&#x7684;&#x503C;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;repayment_query&quot;,
+    &quot;body&quot;: {
+                 &quot;datetime&quot; : {
+                         &quot;start_time&quot;: &quot;2018-01-01 12:00:00&quot;,
+                         &quot;end_time&quot;: &quot;2018-01-02 18:00:00&quot;,
+
+                 },
+                 &quot;custom&quot; : {
+                         &quot;key&quot; : &quot;order_id&quot;
+                         &quot;value : &quot;323123_001,323123_002&quot;,
+                 }
+    }
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>order_id</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x6295;&#x8D44;&#x8BB0;&#x5F55;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>loan_id</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5E73;&#x53F0;&#x6807;&#x7684;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>repayment</td>
+<td>array</td>
+<td>&#x5426;</td>
+<td>&#x56DE;&#x6B3E;&#x8BB0;&#x5F55;&#x660E;&#x7EC6;</td>
+</tr>
+<tr>
+<td>serial</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x56DE;&#x6B3E;&#x7F16;&#x53F7;</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x9884;&#x8BA1;&#x56DE;&#x6B3E;&#x672C;&#x91D1;</td>
+</tr>
+<tr>
+<td>actual_amount</td>
+<td>float</td>
+<td>&#x5426;</td>
+<td>&#x5B9E;&#x9645;&#x56DE;&#x6B3E;&#x672C;&#x91D1;&#xFF0C;&#x56DE;&#x6B3E;&#x65F6;&#x63D0;&#x4F9B;</td>
+</tr>
+<tr>
+<td>interest</td>
+<td>float</td>
+<td>&#x662F;</td>
+<td>&#x9884;&#x8BA1;&#x56DE;&#x6B3E;&#x5229;&#x606F;</td>
+</tr>
+<tr>
+<td>actual_interest</td>
+<td>float</td>
+<td>&#x5426;</td>
+<td>&#x5B9E;&#x9645;&#x56DE;&#x6B3E;&#x5229;&#x606F;</td>
+</tr>
+<tr>
+<td>repay_date</td>
+<td>date</td>
+<td>&#x662F;</td>
+<td>&#x9884;&#x8BA1;&#x56DE;&#x6B3E;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>actual_date</td>
+<td>date</td>
+<td>&#x5426;</td>
+<td>&#x5B9E;&#x9645;&#x56DE;&#x6B3E;&#x65F6;&#x95F4;</td>
+</tr>
+<tr>
+<td>repay_type</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>&#x56DE;&#x6B3E;&#x7C7B;&#x578B;1&#x6B63;&#x5E38;2&#x63D0;&#x524D;3&#x8F6C;&#x8BA9;4&#x903E;&#x671F;</td>
+</tr>
+<tr>
+<td>status</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>1&#x5DF2;&#x8FD8;2&#x5F85;&#x8FD8;</td>
+</tr>
+<tr>
+<td>flag</td>
+<td>enum</td>
+<td>&#x5426;</td>
+<td>&#x662F;&#x5426;&#x7ED3;&#x6E05;&#x6807;&#x8BC6;&#x9ED8;&#x8BA4;0&#xFF1A;&#x672A;&#x7ED3;&#x6E05;1&#x5DF2;&#x7ED3;&#x6E05;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;repayment_query&quot;,
+    &quot;body&quot;: [
+                  {
+&quot;order_id&quot;: &quot;323123_002&quot;,
+&quot;loan_id&quot;: &quot;323123&quot;,
+&quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+        &quot;puid&quot;: &quot;584216&quot;,
+        &quot;repayment&quot;:[
+                         {
+                                 &quot;serial&quot;: &quot;RP0001&quot;,
+                                 &quot;amount&quot;: &quot;1000.00&quot;,
+                                 &quot;actual_amount&quot;: &quot;1000.00&quot;,
+                                 &quot;interest&quot;: &quot;20.56&quot;,
+                                 &quot;actual_interest&quot;: &quot;20.56&quot;,
+                                 &quot;repay_date&quot;: &quot;2017-12-18&quot;,
+                                 &quot;actual_date&quot;: &quot;2017-12-18&quot;,
+                                 &quot;repay_type&quot;: &quot;1&quot;,
+                                 &quot;status&quot;: &quot;1&quot;,
+                                 &quot;flag&quot;: &quot;0&quot;,
+                         },
+                         {
+                                 &quot;serial&quot;: &quot;RP0002&quot;,
+                                 &quot;amount&quot;: &quot;1000.00&quot;,
+                                 &quot;actual_amount&quot;: &quot;0.00&quot;,
+                                 &quot;interest&quot;: &quot;20.56&quot;,
+                                 &quot;actual_interest&quot;: &quot;0.00&quot;,
+                                 &quot;repay_date&quot;: &quot;2017-12-18&quot;,
+                                 &quot;actual_date&quot;: &quot;&quot;,
+                                 &quot;repay_type&quot;: &quot;1&quot;,
+                                 &quot;status&quot;: &quot;2&quot;,
+                                 &quot;flag&quot;: &quot;0&quot;,
+                         }
+        ]
+},
+&#x2026;
+    ]
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>4.10.    <span id="api410">&#x5E73;&#x53F0;&#x552F;&#x4E00;&#x7528;&#x6237;&#x6807;&#x8BC6;&#x67E5;&#x8BE2;</span><br>
+&#x8BE5;&#x63A5;&#x53E3;&#x662F;&#x9488;&#x5BF9;caps1.0&#x5347;&#x7EA7;&#x5230;cpas2.0&#x7684;&#x5408;&#x4F5C;&#x5E73;&#x53F0;&#x6240;&#x9700;&#x5F00;&#x53D1;&#x63A5;&#x53E3;,&#x82E5;&#x4E3A;&#x65B0;&#x5E73;&#x53F0;&#x5BF9;&#x63A5;&#x8BF7;&#x5FFD;&#x7565;&#x6B64;&#x63A5;&#x53E3;<br>
+&#x6B64;&#x63A5;&#x53E3;&#x662F;&#x7528;&#x6765;&#x628A;1.0&#x7684;&#x5DF2;&#x7ED1;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x8FDB;&#x884C;puid&#x540C;&#x6B65;,&#x6211;&#x4EEC;&#x4F1A;&#x63D0;&#x4F9B;&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;&#x53BB;&#x6362;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;,&#x4F7F;1.0&#x7ED1;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;2.0&#x8DF3;&#x8F6C;&#x65B9;&#x5F0F;&#x8FDB;&#x884C;&#x6B63;&#x5E38;&#x8DF3;&#x8F6C;,&#x6B64;&#x63A5;&#x53E3;&#x9700;&#x8981;&#x5E73;&#x53F0;&#x63D0;&#x4F9B;&#x4E00;&#x6B21;&#x53EF;&#x540C;&#x6B65;&#x7528;&#x6237;&#x6570;,&#x5728;&#x5347;&#x7EA7;&#x6210;2.0&#x4E4B;&#x524D;&#x4F1A;&#x8DD1;&#x4E00;&#x6B21;&#x811A;&#x672C;&#x6765;&#x540C;&#x6B65;&#x6570;&#x636E;,&#x82E5;&#x67D0;&#x4E2A;&#x7528;&#x6237;&#x51FA;&#x73B0;&#x5F02;&#x5E38;&#x4E5F;&#x5FC5;&#x987B;&#x8FD4;&#x56DE;&#x5929;&#x773C;uid<br><br>api=puid_query</p>
+<table>
+<thead>
+<tr>
+<th>&#x5B57;&#x6BB5;&#x540D;&#x79F0;</th>
+<th>&#x7C7B;&#x578B;</th>
+<th>&#x5FC5;&#x586B;</th>
+<th>&#x91CA;&#x4E49;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x8BF7;&#x6C42;</td>
+<td></td>
+</tr>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5929;&#x773C;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5929;&#x773C;&#x624B;&#x673A;&#x53F7;</td>
+</tr>
+<tr>
+<td>userkey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>cpas1.0&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x6807;&#x8BC6;&#x4E32;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot;puid_query&quot;,
+    &quot;body&quot;: [ 
+        {
+                                &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+                &quot;mobile&quot;: &quot;15811111111&quot;,
+                &quot;userkey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXsHjBzZRMwI3&quot;,
+        },
+        {
+                                &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+                &quot;mobile&quot;: &quot;15811111111&quot;,
+                &quot;userkey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXjBzZRMwI3&quot;,
+        },
+        &#x2026;&#x2026;
+    ]
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;(puid&#x4E3A;&#x7A7A;&#x4E3A;&#x5F02;&#x5E38;&#x7528;&#x6237;)</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x5929;&#x773C;&#x7528;&#x6237;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>puid</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5728;&#x5E73;&#x53F0;&#x7528;&#x6237;&#x5168;&#x5C40;&#x552F;&#x4E00;&#x6807;&#x8BC6;</td>
+</tr>
+<tr>
+<td>userkey</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>cpas1.0&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x6807;&#x8BC6;&#x4E32;</td>
+</tr>
+<tr>
+<td>mobile</td>
+<td>string</td>
+<td>&#x662F;</td>
+<td>&#x7528;&#x6237;&#x5929;&#x773C;&#x624B;&#x673A;&#x53F7;</td>
+</tr>
+</tbody>
+</table>
+<pre><code>{
+    &quot;api&quot;: &quot; puid_query&quot;,
+    &quot;body&quot;: [ 
+        {
+            &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+            &quot;mobile&quot;: &quot;15811111111&quot;,
+            &quot;puid&quot;: &quot;13432&quot;,
+            &quot;userkey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXsHjBzZRMwI3&quot;,
+        },
+        {
+            &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+            &quot;mobile&quot;: &quot;15811111111&quot;,
+            &quot;puid&quot;: &quot;13432&quot;,
+            &quot;userkey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXjBzZRMwI3&quot;,
+        },
+        {
+            &quot;uid&quot;: &quot;AGwAYQMxAzZTZgdl&quot;,
+            &quot;mobile&quot;: &quot;15811111111&quot;,
+            &quot;puid&quot;: &quot;&quot;,
+            &quot;userkey&quot;: 2MHawBhUmIFZQw_BDQAP1IzBXjBzZRMwI3&quot;,
+        },
+        &#x2026;&#x2026;
+    ]
+}
+</code></pre><p>5.<span id="api5">&#x5168;&#x5C40;&#x54CD;&#x5E94;&#x7801;</span></p>
+<table>
+<thead>
+<tr>
+<th>&#x54CD;&#x5E94;&#x7801;</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0000</td>
+<td>&#x83B7;&#x53D6;&#x6210;&#x529F;</td>
+</tr>
+<tr>
+<td>5001</td>
+<td>&#x670D;&#x52A1;&#x4E0D;&#x53EF;&#x7528;</td>
+</tr>
+<tr>
+<td>5002</td>
+<td>IP&#x7981;&#x6B62;&#x8BBF;&#x95EE;</td>
+</tr>
+<tr>
+<td>5003</td>
+<td>&#x6307;&#x5B9A;&#x7684;&#x63A5;&#x53E3;&#x4E0D;&#x5B58;&#x5728;</td>
+</tr>
+<tr>
+<td>5004</td>
+<td>&#x7F3A;&#x5C11;&#x5FC5;&#x8981;&#x7684;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>5005</td>
+<td>&#x6570;&#x636E;&#x683C;&#x5F0F;&#x89E3;&#x6790;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>5006</td>
+<td>&#x7B7E;&#x540D;&#x6821;&#x9A8C;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>5007</td>
+<td>&#x8BF7;&#x6C42;&#x65F6;&#x95F4;&#x6233;&#x8FC7;&#x671F;</td>
+</tr>
+<tr>
+<td>5008</td>
+<td>&#x6570;&#x636E;&#x89E3;&#x5BC6;&#x5931;&#x8D25;</td>
+</tr>
+<tr>
+<td>5009</td>
+<td>&#x9519;&#x8BEF;&#x7684;&#x8BF7;&#x6C42;&#x6570;&#x636E;</td>
+</tr>
+<tr>
+<td>5010</td>
+<td>&#x8BF7;&#x6C42;&#x8D85;&#x65F6;</td>
+</tr>
+<tr>
+<td>5011</td>
+<td>&#x67E5;&#x8BE2;&#x8D85;&#x51FA;&#x8303;&#x56F4;</td>
+</tr>
+<tr>
+<td>5012</td>
+<td>&#x91CD;&#x590D;&#x8BF7;&#x6C42;</td>
+</tr>
+<tr>
+<td>5013</td>
+<td>&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;</td>
+</tr>
+</tbody>
+</table>
+<p>6.<span id="api6">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</span><br>
+    1 &#x8001;&#x7528;&#x6237;&#x7ED1;&#x5B9A;&#x56DE;&#x8C03;&#x63A5;&#x53E3;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x4E24;&#x8FB9;&#x624B;&#x673A;&#x53F7;&#x4E00;&#x81F4;&#x6027;&#xFF1B;<br>
+    2 &#x6CE8;&#x610F;&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x5165;&#x5E93;&#x65F6;&#x4E0E;1.0&#x7248;&#x672C;&#x7684;&#x4E00;&#x81F4;&#x6027;&#xFF0C;&#x5BF9;&#x4E8E;1.0&#x679A;&#x4E3E;&#x7C7B;&#x578B;&#x4E2D;&#x6240;&#x6709;&#x7684;&#x5176;&#x4ED6;&#x5DF2;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x7EDF;&#x4E00;&#x66F4;&#x65B0;&#x6210;99&#xFF0C;&#x5E76;&#x4E14;1.0&#x4EE3;&#x7801;&#x4E5F;&#x6539;&#x6210;99&#xFF1B;<br>
+    3 &#x90E8;&#x5206;&#x5E73;&#x53F0;&#x7684;&#x8BA1;&#x7B97;&#x6309;&#x7167;&#x6700;&#x4F4E;&#x6295;&#x8D44;&#x671F;&#x9650;&#x8FDB;&#x884C;&#x7ED3;&#x7B97;&#xFF1B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../process/" class="navigation navigation-prev " aria-label="Previous page: 流程说明">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="./#api1" class="navigation navigation-next " aria-label="Next page: 调用方式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"接口设计","level":"1.4","depth":1,"next":{"title":"调用方式","level":"1.4.1","depth":2,"anchor":"#api1","path":"api/README.md","ref":"api/README.md#api1","articles":[]},"previous":{"title":"流程说明","level":"1.3","depth":1,"path":"process/README.md","ref":"process/README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"api/README.md","mtime":"2018-05-31T05:06:47.933Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-31T05:08:58.965Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
